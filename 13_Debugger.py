@@ -15,3 +15,9 @@ def mutate(a_list):
 
 
 mutate([1, 2, 3, 5, 8, 13])
+
+def odd_or_even(number):
+    if number % 2 == 0:
+        return "This is an even number."
+    else:
+        return "This is an odd number."
