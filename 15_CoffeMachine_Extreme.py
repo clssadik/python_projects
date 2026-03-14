@@ -43,10 +43,11 @@ def math(get_choice):
 
 def decrease(get_sum,calculate_choice):
     global cash
-    cash += round(get_sum,3)
+    cash = cash + MENU[calculate_choice]["cost"]
     resources["water"] -= MENU[calculate_choice]["ingredients"]["water"]
     resources["coffee"] -= MENU[calculate_choice]["ingredients"]["coffee"]
-    resources["milk"] -= MENU[calculate_choice]["ingredients"]["milk"]
+    if calculate_choice == "latte" or calculate_choice == "cappuccino":
+        resources["milk"] -= MENU[calculate_choice]["ingredients"]["milk"]
     change = round(get_sum - MENU[calculate_choice]["cost"], 2)
     print(f"Here is ${change} in change.")
     print(f"Here is your {calculate_choice} ☕️. Enjoy!")
