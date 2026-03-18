@@ -9,8 +9,9 @@ which_way = ["east","north","south","west"]
 
 turtle.shape("arrow")
 turtle.pensize(10)
+turtle.speed("fastest")
 
-for i in range(100):
+for i in range(300):
     turtle.forward(30)
     choice = random.choice(which_way)
     if choice == "east":
