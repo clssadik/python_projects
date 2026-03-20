@@ -15,7 +15,7 @@ def add_turtle():
         turtles[i].color(colors[i])
         turtles[i].penup()
         turtles[i].goto(x=-230, y=y_eks)
-        y_eks += 40
+        y_eks += 41
 
 
 add_turtle()
