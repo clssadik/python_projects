@@ -14,8 +14,12 @@ class Owner:
         self.address = address
         self.number = number
 
+# Owner classından object oluşturduk
 owner1 = Owner("Sadik","Mersin","+9085")
+
+# Oluşturduğumuz owner1 objectini, dog1 içerisine dahil ettik
 dog1 = Dog("bruce","scottish",owner1)
+
 print(dog1.name)
 print(dog1.breed)
 print(dog1.owner.name)
