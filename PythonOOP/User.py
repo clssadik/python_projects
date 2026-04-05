@@ -7,3 +7,7 @@ class User:
     def say_hi_to_user(self,user):
         print(f"Sending message to {user.username}: Hi {user.username}, it's {self.username}")
 
+my_username = User("clssadik","cillsadik@gmail.com",0000)
+new_user = User("alice","alice@gmail.com",1111)
+
+my_username.say_hi_to_user(new_user)
