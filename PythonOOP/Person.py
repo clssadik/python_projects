@@ -8,3 +8,6 @@ class Person:
 
 person1 = Person("Sadik",23)
 person1.greet()
+
+person2 = Person("Alice",99)
+person2.greet()
