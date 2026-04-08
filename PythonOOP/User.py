@@ -11,3 +11,10 @@ my_username = User("clssadik","cillsadik@gmail.com",0000)
 new_user = User("alice","alice@gmail.com",1111)
 
 my_username.say_hi_to_user(new_user)
+
+print(my_username.email)
+
+# this is not good
+# make attribute private
+my_username.email = "new@gmail.com"
+print(my_username.email)
