@@ -19,5 +19,5 @@ print(my_username.clean_email())
 
 # this is not good
 # make attribute private
-my_username.email = "new@gmail.com"
+my_username.email = "new@gmail.comö"
 print(my_username.email)
