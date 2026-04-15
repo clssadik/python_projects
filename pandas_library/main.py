@@ -20,11 +20,25 @@ import pandas
 from numpy.ma.extras import average
 
 data = pandas.read_csv("weather_data.csv")
+#
+# # print(data["temp"])
+#
+# # data_dict = data.to_dict()
+# # print(data_dict)
+# data_list = data["temp"].to_list()
+#
+# print(average(data_list))
+# print(data["temp"].max())
+# print(data.temp.max())
 
-# print(data["temp"])
+# Get row from data table
+print(data[data.day == "Monday"])
+# Get max temp row
+print(data[data.temp == data.temp.max()])
 
-data_dict = data.to_dict()
-print(data_dict)
-data_list = data["temp"].to_list()
-print(data_list)
-print(average(data_list))
+
+
+
+
+
+
