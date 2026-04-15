@@ -36,9 +36,18 @@ print(data[data.day == "Monday"])
 # Get max temp row
 print(data[data.temp == data.temp.max()])
 
+monday = data[data.day == "Monday"]
+fahr = (monday.temp[0] * 9 / 5) + 32
+print(fahr)
 
-
-
+# Create dataframe from scratch
+data_dict = {
+    "students" : ["Amy","James", "Angela"],
+    "scores" : [76, 56, 65]
+}
+data2 = pandas.DataFrame(data_dict)
+data.to_csv("new_data2.csv")
+print(data2)
 
 
 
