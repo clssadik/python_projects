@@ -63,6 +63,7 @@ data_dict = {
 }
 
 data2 = pandas.DataFrame(data_dict)
+data2.to_csv("data.csv")
 print(data2)
 
 
