@@ -14,7 +14,7 @@ sentence_list = sentence.split()
 result = {sent:len(sent) for sent in sentence_list}
 print(result)
 
-# celciustan fahrenheit'a çevirdim
+# celciustan fahrenheit'a çevirdim"
 weather_c = {"Monday": 12, "Tuesday": 14, "Wednesday": 15, "Thursday": 14, "Friday": 21, "Saturday": 22, "Sunday": 24}
 weather_f = {day:(celc*9/5)+32 for (day,celc) in weather_c.items()}
 print(weather_f)
