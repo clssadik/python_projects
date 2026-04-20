@@ -5,8 +5,9 @@ data_dict2 = {
     "students" : ["Amy","James","Angela"],
     "scores" : [76,56,65]
 }
-data = pandas.DataFrame(data_dict2)
-print(data)
+data2 = pandas.DataFrame(data_dict2)
+print(data2)
+
 
 data = pandas.read_csv("weather_data.csv")
 print(type(data.day))
