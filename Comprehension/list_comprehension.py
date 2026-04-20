@@ -11,3 +11,12 @@ names = ["Alex","Beth","Caroline","Elanor","Freddie"]
 short_names = [name for name in names if len(name) < 5]
 long_names = [name.upper() for name in names if len(name) >= 5]
 print(long_names)
+
+with open("file1.txt") as f1:
+    data1 = f1.readlines()
+with open("file2.txt") as f2:
+    data2 = f2.readlines()
+
+result = [int(n) for n in data1 if n in data2]
+
+print(result)
