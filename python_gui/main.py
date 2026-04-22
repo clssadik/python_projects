@@ -12,16 +12,15 @@ my_label["text"] = "New Text"
 # Buton yaratma
 
 def button_clicked():
-    my_label.config(text="Button Clicked")
-    # button_label.pack()
+    input_data = data.get()
+    my_label.config(text=input_data)
 
-button = Button(text="Click me", command=button_clicked)
+button = Button(text="Click me", command=button_clicked, background="blue")
 button.pack()
 
 # Data girişi
 data = Entry()
 data.pack()
-
 
 
 
