@@ -22,7 +22,6 @@ result.grid(row=1, column=1)
 
 text2 = Label(text="Km")
 text2.grid(row=1, column=2)
-text
 
 button = Button(text="Calculate", command=button_clicked)
 button.grid(row=2, column=1)
