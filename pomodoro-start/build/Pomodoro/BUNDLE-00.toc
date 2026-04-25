@@ -1,0 +1,3 @@
+([('Pomodoro',
+   '/Users/clssadik/Documents/python_projects/pomodoro-start/dist/Pomodoro',
+   'EXECUTABLE')],)
