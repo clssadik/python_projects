@@ -16,6 +16,7 @@ cancel = None
 # ---------------------------- TIMER RESET ------------------------------- # 
 
 def reset_timer():
+    start_button.config(state="normal")
     global cancel
     global reps
     window.after_cancel(cancel)
@@ -27,7 +28,11 @@ def reset_timer():
 # ---------------------------- TIMER MECHANISM ------------------------------- # 
 
 def start_timer():
+    start_button.config(state="disabled")
     global reps
+    global cancel
+    if cancel != None:
+        window.after_cancel(cancel)
     reps += 1
     work_sec = WORK_MIN * 60
     short_break_sec = SHORT_BREAK_MIN * 60
@@ -86,23 +91,5 @@ tomato_img = PhotoImage(file="tomato.png")
 canvas.create_image(100, 112, image=tomato_img)
 timer_text = canvas.create_text(100,130, text="00:00",fill="white",font=(FONT_NAME,35, "bold"))
 canvas.grid(row=1,column=1)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 window.mainloop()
