@@ -49,17 +49,15 @@ facebook_posts = [
     {'Likes': 19, 'Comments': 3}
 ]
 
-
 def count_likes(posts):
 
     total_likes = 0
     for post in posts:
-        total_likes = total_likes + post['Likes']
+        try:
+            total_likes = total_likes + post['Likes']
+        except KeyError:
+            pass
     
     return total_likes
 
-
-try:
-    count_likes(facebook_posts)
-except KeyError:
-    print("Key Error")
+count_likes(facebook_posts)
