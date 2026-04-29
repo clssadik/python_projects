@@ -2,6 +2,7 @@
 # contents = file.read()
 # print(contents)
 # file.close()
+# file
 
 with open("/Users/clssadik/Pictures/my_file.txt",mode="w") as file:
     file.write("hello world")
