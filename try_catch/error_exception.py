@@ -12,4 +12,3 @@ while True:
     except KeyError:
         print("Please enter a valid word.")
     # new_list = [n for n in list]
-    
