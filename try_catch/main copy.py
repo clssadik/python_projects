@@ -5,6 +5,10 @@ from tkinter import *
 from tkinter import messagebox
 import random
 import json
+from pathlib import Path
+
+BASE_DIR = Path(__file__).resolve().parent
+DATA_FILE = BASE_DIR / "data.json"
 
 
 
@@ -37,7 +41,7 @@ def save_data():
     email = email_username_data.get()
     password = password_data.get()
     new_data = {
-        "website": {
+        website: {
             "email": email,
             "password" : password,
         }
@@ -48,8 +52,8 @@ def save_data():
         messagebox.showwarning(title="Warning",message="Please fill in the required fields!")
         
     else:  
-        with open("data.json","w") as data_file:
-            json.dump(new_data,data_file)
+        with open(DATA_FILE,"w") as data_file:
+            json.dump(new_data,data_file,indent=4)
 
     website_data.delete(0,END)
     password_data.delete(0,END)
