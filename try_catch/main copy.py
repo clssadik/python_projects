@@ -4,6 +4,7 @@ from tkinter import Label
 from tkinter import * 
 from tkinter import messagebox
 import random
+import json
 
 
 
@@ -35,15 +36,20 @@ def save_data():
     website = website_data.get()
     email = email_username_data.get()
     password = password_data.get()
+    new_data = {
+        "website": {
+            "email": email,
+            "password" : password,
+        }
+    }
+
 
     if len(website) == 0 or len(password) == 0 or len(email) == 0:
         messagebox.showwarning(title="Warning",message="Please fill in the required fields!")
-
+        
     else:  
-        is_okay = messagebox.askokcancel(title=website,message=f"Email : {email}\nPassword : {password}\nWould you like to save it?")
-        if is_okay:
-            with open("password_manager.txt","a") as file:
-                file.write(f"{website} | {email} | {password}\n")
+        with open("data.json","w") as data_file:
+            json.dump(new_data,data_file)
 
     website_data.delete(0,END)
     password_data.delete(0,END)
@@ -56,7 +62,7 @@ window.title("Password Manager")
 window.config(padx=50, pady=50)
 
 canvas = Canvas(height=200, width=200, highlightthickness=0)
-photo = PhotoImage(file="logo.png")
+photo = PhotoImage(file="try_catch/logo.png") 
 canvas.create_image(100,100,image=photo)
 canvas.grid(row=0,column=1)
 
