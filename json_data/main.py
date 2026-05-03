@@ -17,3 +17,18 @@ except KeyError as error_message:
 else:
     content = file.read()
     print(content)
+finally:
+    file.close()
+    # Raising my own exceptions
+    # raise KeyError("uydurdum")
+
+height = float(input("Height: "))
+weight = int(input("Weight: "))
+
+if height > 3:
+    raise ValueError("Height shouldn't be over 3 meters")
+
+bmi = weight / height ** 2
+print(bmi)
+
+
