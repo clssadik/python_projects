@@ -48,19 +48,28 @@ def save_data():
         messagebox.showwarning(title="Warning",message="Please fill in the required fields!")
 
     else:  
-        with open("data.json","r") as data_file:
-            
-            #read data
-            data = json.load(data_file)
-            # update data
-            data.update(new_data)
+        try:
+            with open("data.json","r") as data_file:
+                #read data
+                data = json.load(data_file)
+                # update data
+                data.update(new_data)
+        
+        except FileNotFoundError:
+            with open("data.json","w") as data_file:
+                # Saving updated data
+                json.dump(new_data,data_file,indent=4)
 
-        with open("data.json","w") as data_file:
-            # Saving updated data
-            json.dump(data,data_file,indent=4)
-            
-            website_data.delete(0,END)
-            password_data.delete(0,END)
+                website_data.delete(0,END)
+                password_data.delete(0,END)
+        else:
+            with open("data.json","w") as data_file:
+                # Saving updated data
+                json.dump(data,data_file,indent=4)
+
+                website_data.delete(0,END)
+                password_data.delete(0,END)
+              
     
 
 # ---------------------------- UI SETUP ------------------------------- #
