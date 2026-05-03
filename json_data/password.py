@@ -1,3 +1,4 @@
+from hmac import new
 import pyperclip
 from tkinter import Entry
 from tkinter import Label
@@ -47,8 +48,16 @@ def save_data():
         messagebox.showwarning(title="Warning",message="Please fill in the required fields!")
 
     else:  
+        with open("data.json","r") as data_file:
+            
+            #read data
+            data = json.load(data_file)
+            # update data
+            data.update(new_data)
+
         with open("data.json","w") as data_file:
-            json.dump(new_data,data_file)
+            # Saving updated data
+            json.dump(data,data_file,indent=4)
             
             website_data.delete(0,END)
             password_data.delete(0,END)
