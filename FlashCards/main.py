@@ -1,18 +1,15 @@
-from pydoc import text
 from tkinter import *
 import pandas
 import random
-
-from pandas.core.frame import com
 
 data_file = pandas.read_csv("data/french_words.csv")
 cards = data_file.to_dict(orient="records")
 current_card = random.choice(cards)
 
-
 def new_card_everytime():
+    global current_card
     current_card = random.choice(cards)
-    word(text=current_card["French"])
+    word.config(text=current_card["French"])
 
 BACKGROUND_COLOR = "#B1DDC6"
 
