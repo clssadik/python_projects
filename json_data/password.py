@@ -1,4 +1,5 @@
 from hmac import new
+from webbrowser import get
 import pyperclip
 from tkinter import Entry
 from tkinter import Label
@@ -6,8 +7,6 @@ from tkinter import *
 from tkinter import messagebox
 import random
 import json
-
-
 
 # ---------------------------- PASSWORD GENERATOR ------------------------------- #
 
@@ -50,27 +49,36 @@ def save_data():
     else:  
         try:
             with open("data.json","r") as data_file:
-                #read data
                 data = json.load(data_file)
-                # update data
                 data.update(new_data)
         
         except FileNotFoundError:
             with open("data.json","w") as data_file:
-                # Saving updated data
                 json.dump(new_data,data_file,indent=4)
 
-                website_data.delete(0,END)
-                password_data.delete(0,END)
         else:
             with open("data.json","w") as data_file:
-                # Saving updated data
                 json.dump(data,data_file,indent=4)
 
-                website_data.delete(0,END)
-                password_data.delete(0,END)
+        finally:
+            website_data.delete(0,END)
+            password_data.delete(0,END)
               
-    
+# ----------------------------  SEARCH  ------------------------------- #
+def search_website():
+    website = website_data.get()
+
+    with open("data.json", "r") as data_file:
+        data = json.load(data_file)
+
+        try:
+            if website in data:
+                messagebox.showinfo(title=website,message=f"Email : {data[website]["email"]}\nPassword : {data[website]["password"]}")
+        except:
+                messagebox.showerror(message="No Data file Found")
+        
+        if len(website) == 0:
+            messagebox.showinfo(message="No details for the website exists")
 
 # ---------------------------- UI SETUP ------------------------------- #
 
@@ -102,6 +110,9 @@ email_username_data.grid(row=2,column=1,columnspan=2)
 
 password_data = Entry(width=20,background="white",fg="black")
 password_data.grid(row=3,column=1)
+
+generate = Button(text="Search",background="white",width=11,command=search_website)
+generate.grid(row=1,column=2)
 
 generate = Button(text="Generate Password",background="white",width=11,command=password_generator)
 generate.grid(row=3,column=2)
