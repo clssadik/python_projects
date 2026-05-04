@@ -67,19 +67,16 @@ def save_data():
 # ----------------------------  SEARCH  ------------------------------- #
 def search_website():
     website = website_data.get()
-
-    with open("data.json", "r") as data_file:
-        data = json.load(data_file)
-
-        try:
+    try:
+        with open("data.json", "r") as data_file:
+            data = json.load(data_file)
             if website in data:
                 messagebox.showinfo(title=website,message=f"Email : {data[website]["email"]}\nPassword : {data[website]["password"]}")
-        except:
-                messagebox.showerror(message="No Data file Found")
-        
-        if len(website) == 0:
-            messagebox.showinfo(message="No details for the website exists")
-
+            else:
+                messagebox.showinfo(message="No details for the website exists")
+    except FileNotFoundError:
+            messagebox.showerror(message="No Data file Found")
+            
 # ---------------------------- UI SETUP ------------------------------- #
 
 window = Tk()
