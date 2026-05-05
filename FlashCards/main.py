@@ -7,7 +7,7 @@ BACKGROUND_COLOR = "#B1DDC6"
 data_file = pandas.read_csv("data/french_words.csv")
 cards = data_file.to_dict(orient="records")
 current_card = random.choice(cards)
-dms dsfjdsfjn
+
 def reset_frontt():
     global current_card
     current_card = random.choice(cards)
