@@ -1,3 +1,4 @@
+import stat
 from tkinter import *
 from tkinter import ttk
 import pandas
@@ -102,11 +103,11 @@ title_id = canvas.create_text(400, 150, text="French", font=("Ariel", 40, "itali
 word_id = canvas.create_text(400, 263, text=current_card["French"], font=("Ariel", 60, "bold"), fill="black")
 
 wrong_image = PhotoImage(file="images/wrong.png")
-button1 = Button(image=wrong_image, highlightthickness=0,borderwidth=0,relief="flat",command=reverse_card)
+button1 = Button(image=wrong_image, highlightthickness=0,borderwidth=0,relief="flat",command=reverse_card,state=DISABLED)
 button1.grid(row=1,column=0)
 
 right_image = PhotoImage(file="images/right.png")
-button2 = Button(image=right_image,highlightthickness=0,borderwidth=0,relief="flat",command=right_clicked)
+button2 = Button(image=right_image,highlightthickness=0,borderwidth=0,relief="flat",command=right_clicked,state=DISABLED)
 button2.grid(row=1,column=1)
 
 button3 = Button(text="Known Words",highlightthickness=0,background=BACKGROUND_COLOR,width=20,borderwidth=0,relief="flat",activebackground=BACKGROUND_COLOR,highlightbackground=BACKGROUND_COLOR,command=listeyi_getir,state=NORMAL)
