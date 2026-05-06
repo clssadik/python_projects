@@ -42,7 +42,9 @@ def flip_card():
 def listeyi_getir():
     list_window = Toplevel()
     list_window.title("Known Words")
-    list_window.geometry("400x300")
+    list_window.geometry("500x350")
+    list_window.resizable(False, False)
+
 
     style = ttk.Style()
     style.theme_use("default")
@@ -74,6 +76,9 @@ def listeyi_getir():
                 
     except FileNotFoundError:
         print("Henüz bilinen kelime dosyası oluşturulmamış.")
+
+    button3.config(state=DISABLED)
+
 
 
 window = Tk()
