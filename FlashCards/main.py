@@ -44,7 +44,8 @@ def listeyi_getir():
     list_window.title("Known Words")
     list_window.geometry("500x350")
     list_window.resizable(False, False)
-
+    
+    button3.config(state=DISABLED)
 
     style = ttk.Style()
     style.theme_use("default")
@@ -77,7 +78,12 @@ def listeyi_getir():
     except FileNotFoundError:
         print("Henüz bilinen kelime dosyası oluşturulmamış.")
 
-    button3.config(state=DISABLED)
+    def close_window():
+        button3.config(state=NORMAL)
+        list_window.destroy()
+
+    list_window.protocol("WM_DELETE_WINDOW", close_window)
+
 
 
 
@@ -103,7 +109,7 @@ right_image = PhotoImage(file="images/right.png")
 button2 = Button(image=right_image,highlightthickness=0,borderwidth=0,relief="flat",command=right_clicked)
 button2.grid(row=1,column=1)
 
-button3 = Button(text="Known Words",highlightthickness=0,background=BACKGROUND_COLOR,width=20,borderwidth=0,relief="flat",activebackground=BACKGROUND_COLOR,highlightbackground=BACKGROUND_COLOR,command=listeyi_getir)
+button3 = Button(text="Known Words",highlightthickness=0,background=BACKGROUND_COLOR,width=20,borderwidth=0,relief="flat",activebackground=BACKGROUND_COLOR,highlightbackground=BACKGROUND_COLOR,command=listeyi_getir,state=NORMAL)
 button3.grid(row=2,column=0,columnspan=2)
 
 window.mainloop()
