@@ -102,5 +102,13 @@
     {
         "French": "laisser",
         "English": "let"
+    },
+    {
+        "French": "aucune",
+        "English": "any"
+    },
+    {
+        "French": "arr\u00eater",
+        "English": "Stop"
     }
 ]
