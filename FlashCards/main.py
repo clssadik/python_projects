@@ -12,6 +12,14 @@ cards = data_file.to_dict(orient="records")
 current_card = random.choice(cards)
 
 def reverse_card():
+    global current_card
+    current_card = random.choice(cards)
+    canvas.itemconfig(title_id,text="French",fill="black")
+    canvas.itemconfig(word_id, text=current_card["French"], fill="black")
+    canvas.itemconfig(canvas_image,image=front)
+    button1.config(state=DISABLED)
+    button2.config(state=DISABLED)
+    window.after(3000,flip_card)
     
 
 def right_clicked():
