@@ -90,8 +90,6 @@ def listeyi_getir():
     list_window.protocol("WM_DELETE_WINDOW", close_window)
 
 
-
-
 window = Tk()
 window.title("Flashy")
 window.config(padx=50,pady=50,background=BACKGROUND_COLOR)
