@@ -62,5 +62,45 @@
     {
         "French": "aide",
         "English": "help"
+    },
+    {
+        "French": "longtemps",
+        "English": "long time"
+    },
+    {
+        "French": "aura",
+        "English": "will have"
+    },
+    {
+        "French": "histoire",
+        "English": "history"
+    },
+    {
+        "French": "ville",
+        "English": "city"
+    },
+    {
+        "French": "devant",
+        "English": "in front of"
+    },
+    {
+        "French": "type",
+        "English": "type"
+    },
+    {
+        "French": "partie",
+        "English": "part"
+    },
+    {
+        "French": "yeux",
+        "English": "eyes"
+    },
+    {
+        "French": "pardon",
+        "English": "sorry"
+    },
+    {
+        "French": "laisser",
+        "English": "let"
     }
 ]

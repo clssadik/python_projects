@@ -17,6 +17,8 @@ def reverse_card():
     canvas.itemconfig(title_id,text="French",fill="black")
     canvas.itemconfig(word_id, text=current_card["French"], fill="black")
     canvas.itemconfig(canvas_image,image=front)
+    button1.config(state=DISABLED)
+    button2.config(state=DISABLED)
     window.after(3000,flip_card)
 
 def right_clicked():
