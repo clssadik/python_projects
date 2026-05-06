@@ -39,6 +39,8 @@ def flip_card():
     canvas.itemconfig(word_id, text=current_card["English"], fill="white")
     canvas.itemconfig(title_id, text="English", fill="white")
     canvas.itemconfig(canvas_image, image=back)
+    button1.config(state=NORMAL)
+    button2.config(state=NORMAL)
 
 def listeyi_getir():
     list_window = Toplevel()
