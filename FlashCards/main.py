@@ -44,15 +44,14 @@ def listeyi_getir():
     list_window.title("Known Words")
     list_window.geometry("400x300")
 
-     # --- STİL BAŞLANGICI ---
     style = ttk.Style()
     style.theme_use("default")
     
-    # Tablo hücrelerinin ve boş alanın rengi
     style.configure("Treeview",background=BACKGROUND_COLOR,foreground="white",rowheight=30,fieldbackground=BACKGROUND_COLOR)
+    style.configure("Treeview.Heading", background="white", font=('Arial', 10, 'bold'),foreground="black")
 
-    sutunlar = ("French", "English")
-    tablo = ttk.Treeview(list_window, columns=sutunlar, show="headings")
+    columns = ("French", "English")
+    tablo = ttk.Treeview(list_window, columns=columns, show="headings")
 
     tablo.heading("French", text="French")
     tablo.heading("English", text="English")
