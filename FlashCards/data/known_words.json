@@ -1,18 +1,66 @@
 [
     {
-        "French": "fr\u00e8re",
-        "English": "brother"
+        "French": "pensais",
+        "English": "thought"
     },
     {
         "French": "gros",
         "English": "large"
     },
     {
-        "French": "fin",
-        "English": "end"
+        "French": "corps",
+        "English": "body"
     },
     {
-        "French": "gros",
-        "English": "large"
+        "French": "revoir",
+        "English": "meet again"
+    },
+    {
+        "French": "droit",
+        "English": "law"
+    },
+    {
+        "French": "nouvelle",
+        "English": "new"
+    },
+    {
+        "French": "dont",
+        "English": "whose"
+    },
+    {
+        "French": "enfant",
+        "English": "child"
+    },
+    {
+        "French": "sois",
+        "English": "be"
+    },
+    {
+        "French": "tellement",
+        "English": "so much"
+    },
+    {
+        "French": "trouve",
+        "English": "find"
+    },
+    {
+        "French": "longtemps",
+        "English": "long time"
+    },
+    {
+        "French": "point",
+        "English": "point"
+    },
+    {
+        "French": "compte",
+        "English": "account"
+    },
+    {
+        "French": "bureau",
+        "English": "office"
+    },
+    {
+        "French": "aide",
+        "English": "help"
     }
 ]

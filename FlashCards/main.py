@@ -1,5 +1,5 @@
-from gc import disable
 from tkinter import *
+from tkinter import ttk
 import pandas
 import random
 import json
@@ -39,6 +39,43 @@ def flip_card():
     canvas.itemconfig(title_id, text="English", fill="white")
     canvas.itemconfig(canvas_image, image=back)
 
+def listeyi_getir():
+    list_window = Toplevel()
+    list_window.title("Known Words")
+    list_window.geometry("400x300")
+
+     # --- STİL BAŞLANGICI ---
+    style = ttk.Style()
+    style.theme_use("default")
+    
+    # Tablo hücrelerinin ve boş alanın rengi
+    style.configure("Treeview",background=BACKGROUND_COLOR,foreground="white",rowheight=30,fieldbackground=BACKGROUND_COLOR)
+
+    sutunlar = ("French", "English")
+    tablo = ttk.Treeview(list_window, columns=sutunlar, show="headings")
+
+    tablo.heading("French", text="French")
+    tablo.heading("English", text="English")
+
+    tablo.column("French", width=150, anchor=CENTER)
+    tablo.column("English", width=150, anchor=CENTER)
+
+    scrollbar = ttk.Scrollbar(list_window, orient=VERTICAL, command=tablo.yview)
+    tablo.configure(yscrollcommand=scrollbar.set)
+    scrollbar.pack(side=RIGHT, fill=Y)
+
+    tablo.pack(expand=True, fill="both")
+
+    try:
+        with open("data/known_words.json", "r", encoding="utf-8") as file:
+            data = json.load(file)
+            
+            for kelime in data:
+                tablo.insert("", END, values=(kelime["French"], kelime["English"]))
+                
+    except FileNotFoundError:
+        print("Henüz bilinen kelime dosyası oluşturulmamış.")
+
 
 window = Tk()
 window.title("Flashy")
@@ -62,7 +99,7 @@ right_image = PhotoImage(file="images/right.png")
 button2 = Button(image=right_image,highlightthickness=0,borderwidth=0,relief="flat",command=right_clicked)
 button2.grid(row=1,column=1)
 
-button3 = Button(text="Known Words",highlightthickness=0,background=BACKGROUND_COLOR,width=20,borderwidth=0,relief="flat",activebackground=BACKGROUND_COLOR,highlightbackground=BACKGROUND_COLOR)
+button3 = Button(text="Known Words",highlightthickness=0,background=BACKGROUND_COLOR,width=20,borderwidth=0,relief="flat",activebackground=BACKGROUND_COLOR,highlightbackground=BACKGROUND_COLOR,command=listeyi_getir)
 button3.grid(row=2,column=0,columnspan=2)
 
 window.mainloop()
