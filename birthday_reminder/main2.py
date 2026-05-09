@@ -13,6 +13,8 @@ import pandas
 import random
 import smtplib
 
+my_email = "cillsadik@gmail.com"
+password = "lrktocahhgcsipks"
 
 now = dt.datetime.now()
 month = now.month
@@ -20,7 +22,15 @@ day = now.day
 
 data_file = pandas.read_csv("birthdays.csv")
 
-# if month == data_file["month"][0] and day == ["day"][0]:
+if month == data_file["month"][0] and day == ["day"][0]:
+    with smtplib.SMTP("smtp.gmail.com",587) as connection:
+        connection.starttls()
+        connection.login(user=my_email,password=password)
+        connection.sendmail(
+            from_addr=my_email,
+            to_addrs=data_file["email"][0],
+            msg=f"Subject:Happy Birthday\n\n{}".encode("utf-8")
+        )
 
 
 print(day)
