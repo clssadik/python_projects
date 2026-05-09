@@ -18,6 +18,7 @@ CLAUDE.md
 # AI tools
 .claude/
 .openclaude/
+opencode.json
 
 # Python bytecode cache
 __pycache__/
