@@ -22,15 +22,21 @@ day = now.day
 
 data_file = pandas.read_csv("birthdays.csv")
 
+
 if month == data_file["month"][0] and day == ["day"][0]:
-    with smtplib.SMTP("smtp.gmail.com",587) as connection:
-        connection.starttls()
-        connection.login(user=my_email,password=password)
-        connection.sendmail(
-            from_addr=my_email,
-            to_addrs=data_file["email"][0],
-            msg=f"Subject:Happy Birthday\n\n{}".encode("utf-8")
-        )
+    
+    with open(f"letter_templates/letter_{random.randint(1,3)}.txt") as file:
+        
+        data = file.read()
+        
+        with smtplib.SMTP("smtp.gmail.com",587) as connection:
+            connection.starttls()
+            connection.login(user=my_email,password=password)
+            connection.sendmail(
+                from_addr=my_email,
+                to_addrs=data_file["email"][0],
+                msg=f"Subject:Happy Birthday\n\n{data}".encode("utf-8")
+            )
 
 
 print(day)
