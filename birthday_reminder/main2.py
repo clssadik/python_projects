@@ -28,6 +28,7 @@ if month == data_file["month"][0] and day == ["day"][0]:
     with open(f"letter_templates/letter_{random.randint(1,3)}.txt") as file:
         
         data = file.read()
+        name_changed = data.replace(f"[NAME],{data_file["name"][0]}")
         
         with smtplib.SMTP("smtp.gmail.com",587) as connection:
             connection.starttls()
@@ -35,9 +36,6 @@ if month == data_file["month"][0] and day == ["day"][0]:
             connection.sendmail(
                 from_addr=my_email,
                 to_addrs=data_file["email"][0],
-                msg=f"Subject:Happy Birthday\n\n{data}".encode("utf-8")
+                msg=f"Subject:Happy Birthday\n\n{name_changed}".encode("utf-8")
             )
-
-
-print(day)
 
