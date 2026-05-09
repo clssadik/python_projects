@@ -11,12 +11,12 @@
 import datetime as dt
 import pandas
 import random
+import smtplib
+
 
 now = dt.datetime.now()
 month = now.month
 day = now.day
-random_int = random.randint(1,3)
-print(random_int)
 
 data_file = pandas.read_csv("birthdays.csv")
 
