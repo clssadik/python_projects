@@ -12,10 +12,9 @@ day = now.day
 
 data_file = pandas.read_csv("birthdays.csv")
 
-
 if month == data_file["month"][0] and day == data_file["day"][0]:
     
-    with open(f"letter_templates/letter_{random.randint(1,3)}.txt") as file:
+    with open(f"letter_templates/letter_{random.randint(1,10)}.txt") as file:
         
         data = file.read()
         name_changed = data.replace("[NAME]", data_file["name"][0])
@@ -28,4 +27,3 @@ if month == data_file["month"][0] and day == data_file["day"][0]:
                 to_addrs=data_file["email"][0],
                 msg=f"Subject:Happy Birthday\n\n{name_changed}".encode("utf-8")
             )
-
