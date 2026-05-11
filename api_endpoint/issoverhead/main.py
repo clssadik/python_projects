@@ -48,5 +48,6 @@ while True:
                         to_addrs="22220030090@mersin.edu.tr",
                         msg=f"Subject:Look Up!\n\n{icerik}".encode("utf-8")
                     )
+    
     time.sleep(60)
 
