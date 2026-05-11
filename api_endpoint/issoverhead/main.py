@@ -7,7 +7,7 @@ MY_LAT = 41.0707456
 MY_LONG = 29.0509414
 
 my_email = "cillsadik@gmail.com"
-password = "lrktocahhgcsipks"
+password = "emzusgkhexoikqao"
 
 parameters = {
     "lat": MY_LAT,
