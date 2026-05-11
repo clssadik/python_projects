@@ -1,8 +1,12 @@
 import requests
 from datetime import datetime
+import smtplib
 
 MY_LAT = 41.0707456
 MY_LONG = 29.0509414
+
+my_email = "cillsadik@gmail.com"
+password = "lrktocahhgcsipks"
 
 response_iss = requests.get(url="http://api.open-notify.org/iss-now.json")
 response_iss.raise_for_status()
@@ -25,7 +29,6 @@ parameters = {
 response_sun = requests.get("https://api.sunrise-sunset.org/json", params=parameters)
 response_sun.raise_for_status()
 data = response_sun.json()
-print(data)
 sunrise = int(data["results"]["sunrise"].split("T")[1].split(":")[0])
 sunset = int(data["results"]["sunset"].split("T")[1].split(":")[0])
 
@@ -33,13 +36,15 @@ print(sunrise," ",sunset)
 
 time_now = datetime.now()
 
-print(time_now)
+print(time_now.hour)
 
 #If the ISS is close to my current position
 # and it is currently dark
 # Then send me an email to tell me to look up.
 # BONUS: run the code every 60 seconds.
 
-# if iss_latitude-5 <= MY_LAT <= iss_latitude+5 and iss_longitude-5 <= MY_LONG <= iss_longitude+5:
+if iss_latitude-5 <= MY_LAT <= iss_latitude+5 and iss_longitude-5 <= MY_LONG <= iss_longitude+5:
+    
+    if sunset <= time_now.hour <= 24 or 0 <= time_now.hour <= sunrise:
 
 
