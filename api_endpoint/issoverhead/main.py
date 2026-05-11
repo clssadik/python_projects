@@ -33,11 +33,6 @@ while True:
 
     time_now = datetime.now()
 
-    #If the ISS is close to my current position
-    # and it is currently dark
-    # Then send me an email to tell me to look up.
-    # BONUS: run the code every 60 seconds.
-
     if iss_latitude-5 <= MY_LAT <= iss_latitude+5 and iss_longitude-5 <= MY_LONG <= iss_longitude+5:
         
         if sunset <= time_now.hour <= 24 or 0 <= time_now.hour <= sunrise:
@@ -50,7 +45,7 @@ while True:
                     connection.login(user=my_email,password=password)
                     connection.sendmail(
                         from_addr=my_email,
-                        to_addrs="22220030090@mersin.edu.tr"
+                        to_addrs="22220030090@mersin.edu.tr",
                         msg=f"Subject:Look Up!\n\n{icerik}".encode("utf-8")
                     )
     time.sleep(60)
