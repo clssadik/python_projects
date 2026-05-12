@@ -1,0 +1,125 @@
+{
+    "response_code": 0,
+    "results": [
+        {
+            "type": "multiple",
+            "difficulty": "easy",
+            "category": "Mythology",
+            "question": "Who was the King of Gods in Ancient Greek mythology?",
+            "correct_answer": "Zeus",
+            "incorrect_answers": [
+                "Apollo",
+                "Hermes",
+                "Poseidon"
+            ]
+        },
+        {
+            "type": "multiple",
+            "difficulty": "medium",
+            "category": "Entertainment: Video Games",
+            "question": "In WarioWare: Smooth Moves, which one of these is NOT a Form?",
+            "correct_answer": "The Hotshot",
+            "incorrect_answers": [
+                "The Discard",
+                "The Elephant",
+                "The Mohawk"
+            ]
+        },
+        {
+            "type": "multiple",
+            "difficulty": "hard",
+            "category": "Entertainment: Film",
+            "question": "In order to cut costs, what were most of the extras of Mad Max (1979) paid with?",
+            "correct_answer": "Beer",
+            "incorrect_answers": [
+                "Fast food",
+                "Food stamps",
+                "They weren&#039;t paid"
+            ]
+        },
+        {
+            "type": "multiple",
+            "difficulty": "hard",
+            "category": "Entertainment: Video Games",
+            "question": "In &quot;Team Fortress 2&quot;, what is the fastest taunt kill that can be pulled off?",
+            "correct_answer": "Showdown",
+            "incorrect_answers": [
+                "Hadouken",
+                "Organ Grinder",
+                "Skewer"
+            ]
+        },
+        {
+            "type": "multiple",
+            "difficulty": "medium",
+            "category": "Geography",
+            "question": "Which European city has the highest mileage of canals in the world?",
+            "correct_answer": "Birmingham",
+            "incorrect_answers": [
+                "Venice",
+                "Amsterdam",
+                "Berlin"
+            ]
+        },
+        {
+            "type": "multiple",
+            "difficulty": "medium",
+            "category": "Science &amp; Nature",
+            "question": "Which part of the body does glaucoma affect?",
+            "correct_answer": "Eyes",
+            "incorrect_answers": [
+                "Throat",
+                "Stomach",
+                "Blood"
+            ]
+        },
+        {
+            "type": "multiple",
+            "difficulty": "easy",
+            "category": "Entertainment: Japanese Anime &amp; Manga",
+            "question": "Who is the armored titan in &quot;Attack On Titan&quot;?",
+            "correct_answer": "Reiner Braun",
+            "incorrect_answers": [
+                "Armin Arlelt",
+                "Mikasa Ackermann",
+                "Eren Jaeger"
+            ]
+        },
+        {
+            "type": "multiple",
+            "difficulty": "medium",
+            "category": "Entertainment: Japanese Anime &amp; Manga",
+            "question": "What year did the anime &quot;Himouto! Umaru-chan&quot; air?",
+            "correct_answer": "2015",
+            "incorrect_answers": [
+                "2014",
+                "2012",
+                "2013"
+            ]
+        },
+        {
+            "type": "multiple",
+            "difficulty": "medium",
+            "category": "Entertainment: Television",
+            "question": "In the Doctor Who universe, how many times can a time lord normally regenerate?",
+            "correct_answer": "12",
+            "incorrect_answers": [
+                "11",
+                "13",
+                "15"
+            ]
+        },
+        {
+            "type": "multiple",
+            "difficulty": "medium",
+            "category": "Entertainment: Japanese Anime &amp; Manga",
+            "question": "Aoi Miyamori is the production manager of what anime in &quot;Shirobako&quot;?",
+            "correct_answer": "The Third Aerial Girls Squad",
+            "incorrect_answers": [
+                "Exodus!",
+                "Andes Chucky",
+                "Angel Beats!"
+            ]
+        }
+    ]
+}
