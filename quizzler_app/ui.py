@@ -37,3 +37,4 @@ class QuizInterface:
         
         
         self.window.mainloop()
+        # Start the Tkinter event loop
