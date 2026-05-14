@@ -9,6 +9,7 @@ class QuizBrain:
         # Initialize quiz state with question list
 
     def still_has_questions(self):
+        # Check if there are remaining questions
         return self.question_number < len(self.question_list)
 
     def next_question(self):
