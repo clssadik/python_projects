@@ -28,6 +28,7 @@ class QuizInterface:
 
         self.button_wrong = Button(image=self.wrong_image,highlightthickness=0)
         self.button_wrong.grid(row=2,column=1)
+        # True and False answer buttons
 
         
         
