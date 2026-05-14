@@ -25,6 +25,7 @@ class QuizBrain:
         correct_answer = self.current_question.answer
         if user_answer.lower() == correct_answer.lower():
             self.score += 1
+            # Increment score on correct answer
             print("You got it right!")
         else:
             print("That's wrong.")
