@@ -6,6 +6,7 @@ class QuizBrain:
         self.question_list = q_list
         self.current_question = None
         # Track current question being displayed
+        # Initialize quiz state with question list
 
     def still_has_questions(self):
         return self.question_number < len(self.question_list)
