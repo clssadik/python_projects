@@ -18,6 +18,7 @@ class QuizInterface:
         self.canvas = Canvas(width=300,height=250, bg="white", highlightthickness=0)
         self.canvas.grid(row=1,column=0, columnspan=2, pady=50)
         self.canvas.create_text(150, 125, text="question", fill=THEME_COLOR, width=280,font=("Arial",20,"italic"))
+        # Canvas for displaying quiz questions
         
         self.right_image = PhotoImage(file="images/true.png")
         self.wrong_image = PhotoImage(file="images/false.png")
