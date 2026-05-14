@@ -13,6 +13,7 @@ class QuizInterface:
         self.score = 0
         self.text_lbl = Label(text=f"Score: {self.score}",fg="white", bg=THEME_COLOR)
         self.text_lbl.grid(row=0,column=1)
+        # Display current score label
 
         self.canvas = Canvas(width=300,height=250, bg="white", highlightthickness=0)
         self.canvas.grid(row=1,column=0, columnspan=2, pady=50)
