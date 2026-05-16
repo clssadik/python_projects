@@ -39,7 +39,11 @@ class QuizInterface:
         self.canvas.itemconfig(self.question_text, text=q_text)
 
     def right_answer(self):
-        self.quiz.check_answer("True")
+        self.give_feedback(self.quiz.check_answer("True")) 
+        
     
     def wrong_answer(self):
-        self.quiz.check_answer("False")
+        self.give_feedback(self.quiz.check_answer("False")) 
+
+    def give_feedback(self,is_right):
+        self.window.after(1000)
