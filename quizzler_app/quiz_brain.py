@@ -15,10 +15,9 @@ class QuizBrain:
     def next_question(self):
         self.current_question = self.question_list[self.question_number]
         self.question_number += 1
-        # Move to the next question in the list
-        user_answer = input(f"Q.{self.question_number}: {self.current_question.text} (True/False): ")
-        # Prompt user for their answer
-        self.check_answer(user_answer)
+        return f"Q.{self.question_number}: {self.current_question.text}"
+        # user_answer = input(f"Q.{self.question_number}: {self.current_question.text} (True/False): ")
+        # self.check_answer(user_answer)
 
     def check_answer(self, user_answer):
         # Compare user answer with correct answer
