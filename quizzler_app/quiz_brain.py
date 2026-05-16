@@ -5,11 +5,8 @@ class QuizBrain:
         self.score = 0
         self.question_list = q_list
         self.current_question = None
-        # Track current question being displayed
-        # Initialize quiz state with question list
 
     def still_has_questions(self):
-        # Check if there are remaining questions
         return self.question_number < len(self.question_list)
 
     def next_question(self):
@@ -20,11 +17,9 @@ class QuizBrain:
         # self.check_answer(user_answer)
 
     def check_answer(self, user_answer):
-        # Compare user answer with correct answer
         correct_answer = self.current_question.answer
         if user_answer.lower() == correct_answer.lower():
             self.score += 1
-            # Increment score on correct answer
             print("You got it right!")
         else:
             print("That's wrong.")

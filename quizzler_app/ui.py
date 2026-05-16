@@ -19,21 +19,27 @@ class QuizInterface:
 
         self.canvas = Canvas(width=300,height=250, bg="white", highlightthickness=0)
         self.canvas.grid(row=1,column=0, columnspan=2, pady=50)
-        self.question_text = self.canvas.create_text(150, 125, width=280, text="question", fill=THEME_COLOR, width=280, font=("Arial",20,"italic"))
+        self.question_text = self.canvas.create_text(150, 125, text="question", fill=THEME_COLOR, width=280, font=("Arial",20,"italic"))
         
         self.right_image = PhotoImage(file="images/true.png")
         self.wrong_image = PhotoImage(file="images/false.png")
-        
-        self.button_right = Button(image=self.right_image,highlightthickness=0)
-        self.button_right.grid(row=2,column=0)
-
-        self.button_wrong = Button(image=self.wrong_image,highlightthickness=0)
-        self.button_wrong.grid(row=2,column=1)
 
         self.get_next_question()
+
+        self.button_right = Button(image=self.right_image,highlightthickness=0,command=self.right_answer)
+        self.button_right.grid(row=2,column=0)
+
+        self.button_wrong = Button(image=self.wrong_image,highlightthickness=0,command=self.wrong_answer)
+        self.button_wrong.grid(row=2,column=1)
 
         self.window.mainloop()
 
     def get_next_question(self):
         q_text = self.quiz.next_question()
         self.canvas.itemconfig(self.question_text, text=q_text)
+
+    def right_answer(self):
+        self.quiz.check_answer("True")
+    
+    def wrong_answer(self):
+        self.quiz.check_answer("False")
