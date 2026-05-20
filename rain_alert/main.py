@@ -44,7 +44,7 @@ if will_rain:
 
     message = client.messages.create(
         from_='whatsapp:+14155238886',
-        body= f"yağmur yağıyor, önümüzdeki 24 saatlik ortalama sıcaklık : {temp_24h}",
+        body= f"yağmur yağıyor, önümüzdeki 24 saatlik ortalama sıcaklık : {temp_24h:.1f}",
         to='whatsapp:+905073519085'
     )
 
