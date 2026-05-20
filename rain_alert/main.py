@@ -21,7 +21,11 @@ params = {
 response = requests.get(URL, params=params)
 data = response.json()
 
-current_temp = data["list"][0]["main"]["temp"]
+temp = 0
+for i in range(0,8):
+    temp += data["list"][i]["main"]["temp"]
+
+temp_24h = temp / 8
 
 print(response.status_code)
 
@@ -40,7 +44,7 @@ if will_rain:
 
     message = client.messages.create(
         from_='whatsapp:+14155238886',
-        body="yağmur yağıyor mevcut sıcaklık : ",
+        body= f"yağmur yağıyor, önümüzdeki 24 saatlik ortalama sıcaklık : {temp_24h}",
         to='whatsapp:+905073519085'
     )
 
