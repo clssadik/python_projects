@@ -26,6 +26,7 @@ for i in range(0,8):
     temp += data["list"][i]["main"]["temp"]
 
 temp_24h = temp / 8
+temp_24h = round(temp_24h,1)
 
 print(response.status_code)
 
@@ -44,7 +45,7 @@ if will_rain:
 
     message = client.messages.create(
         from_='whatsapp:+14155238886',
-        body= f"yağmur yağıyor, önümüzdeki 24 saatlik ortalama sıcaklık : {temp_24h:.1f}",
+        body= f"yağmur yağıyor, önümüzdeki 24 saatlik ortalama sıcaklık : {temp_24h}",
         to='whatsapp:+905073519085'
     )
 
