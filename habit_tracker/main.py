@@ -1,5 +1,7 @@
 import os
 import requests
+from dotenv import load_dotenv
+load_dotenv()
 
 PIXELA_TOKEN = os.environ["PIXELA_TOKEN"]
 pixela_endpoint = "https://pixe.la/v1/users"
