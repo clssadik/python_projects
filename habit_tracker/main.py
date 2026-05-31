@@ -5,7 +5,7 @@ load_dotenv()
 
 PIXELA_TOKEN = os.environ["PIXELA_TOKEN"]
 pixela_endpoint = "https://pixe.la/v1/users"
-USERNAME = "clssadik"
+USERNAME = "clssadik2"
 
 user_params = {
     "token": PIXELA_TOKEN,
@@ -14,18 +14,23 @@ user_params = {
     "notMinor": "yes",
 }
 
-# response = requests.post(pixela_endpoint, json=user_params)
-# print(response.status_code)
+response = requests.post(pixela_endpoint, json=user_params)
+print(response.text)
 
 graph_endpoint = f"{pixela_endpoint}/{USERNAME}/graphs"
 
 graph_config = {
-    "id" : "graph231242342351",
-    "name" : "Activity Graph",
-    "type" : "commit",
-    "color" : "ichou"
+    "id": "activity-graph",
+    "name": "Activity Graph",
+    "unit": "commit",
+    "type": "int",
+    "color": "ichou"
 }
 
-response = requests.post(graph_endpoint,json=graph_config)
+headers = {
+    "X-USER-TOKEN" : PIXELA_TOKEN
+}
+
+response = requests.post(graph_endpoint,json=graph_config, headers = headers)
 print(response.text)
 
