@@ -5,7 +5,8 @@
 build/
 dist/
 *.spec
-CLAUDE.md
+AGENTS.md
+opencode.jsonc
 
 # Python virtual environments
 .venv/
