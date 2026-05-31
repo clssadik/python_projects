@@ -19,17 +19,10 @@ today = date.today().strftime("%Y%m%d")
 
 pixel_config = {
     "date": today,
-    "quantity": "1",
+    "quantity": "20",
 }
 
-for _ in range(10):
-    response = requests.post(pixel_endpoint, json=pixel_config, headers=headers)
-    data = response.json()
-    if data.get("isSuccess"):
-        print("Success:", today)
-        break
-    elif data.get("isRejected"):
-        print("Rejected, retrying...")
-    else:
-        print(data)
-        break
+
+response = requests.post(pixel_endpoint, json=pixel_config, headers=headers)
+print(response.text)
+    
