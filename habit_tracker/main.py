@@ -34,3 +34,7 @@ update_endpoint = f"{pixel_endpoint}/20260530"
 
 response = requests.put(update_endpoint, json=pixel_config_2, headers=headers)
 print(response.text)
+
+delete_endpoint = f"{pixel_endpoint}/20260530"
+response = requests.delete(delete_endpoint, headers=headers)
+print(response.text)
