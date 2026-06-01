@@ -8,6 +8,7 @@ PIXELA_TOKEN = os.environ["PIXELA_TOKEN"]
 USERNAME = "clssadik2"
 pixela_endpoint = "https://pixe.la/v1/users"
 graph_id = "activity-graph"
+GRAPH_URL = "https://pixe.la/v1/users/clssadik2/graphs/activity-graph.html"
 
 headers = {
     "X-USER-TOKEN": PIXELA_TOKEN
@@ -22,7 +23,14 @@ pixel_config = {
     "quantity": "20",
 }
 
+pixel_config_2 = {
+    "quantity": "5",
+}
 
-response = requests.post(pixel_endpoint, json=pixel_config, headers=headers)
+update_endpoint = f"{pixel_endpoint}/20260530"
+
+# response = requests.post(pixel_endpoint, json=pixel_config, headers=headers)
+# print(response.text)
+
+response = requests.put(update_endpoint, json=pixel_config_2, headers=headers)
 print(response.text)
-    
