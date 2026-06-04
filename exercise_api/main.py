@@ -8,6 +8,7 @@ URL = os.environ["BASE_URL"]
 ID = os.environ["ID"]
 KEY = os.environ["KEY"]
 SHEETS = os.environ["SHEETS"]
+AUTH = os.environ["AUTH"]
 
 json_params = {
     "query": "swam for 1 hour"
@@ -38,5 +39,9 @@ body = {
     }
 }
 
-response_sheets = requests.post(SHEETS, json=body)
+sheets_headers = {
+    "Authorization" : AUTH,
+}
+
+response_sheets = requests.post(SHEETS, json=body, headers=sheets_headers)
 print(response_sheets.status_code)
